@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "smart-filter-272": {
+      "hosting": {
+        "lab3": [
+          "smart-filter-272"
+        ]
+      }
+    }
+  }
+}

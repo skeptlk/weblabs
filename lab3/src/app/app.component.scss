@@ -1,0 +1,16 @@
+
+
+ul {
+    padding-left: 15px;
+}
+
+.rangeLabels {
+    display: flow-root;
+    margin-bottom: 15px;
+    .from {
+        float: left;
+    }
+    .to {
+        float: right;
+    }
+}
