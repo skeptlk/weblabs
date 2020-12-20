@@ -1,0 +1,556 @@
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    color: #333;
+}
+
+h1 {
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.btn {
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    background: #ffbb42;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 44px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e79e21;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid #e7ad48;
+    border-radius: 2px;
+}
+
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.header .inner {
+    width: 100%;
+    height: 95px;
+}
+
+.header .logo {
+    height: 95px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+}
+
+
+.nav {
+    float: right;
+    list-style: none;
+    color: #868686;
+    margin: 30px 0;
+    font-size: 14px;
+}
+
+.nav li {
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 8px 17px;
+    margin-left: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nav li.active, .nav li:hover {
+    background: #ffbb42;
+    color: #fff;
+}
+
+
+
+.hero {
+    height: 590px;
+    background: #709dca;
+}
+
+.hero h1 {
+    padding-top: 100px;
+    color: #fff;
+}
+
+.hero p {
+    color: #ffffff;
+    margin-top: 7px;
+    text-align: center;
+}
+
+.req-quote{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.req-quote input, .req-quote button {
+    margin: 0 5px;
+}
+
+.inp-group input {
+    width: 280px;
+    border: 2px solid transparent;
+    border-radius: 3px;
+    padding: 15px 15px 15px 44px;
+}
+
+.inp-group input:focus {
+    border-color: #ffbb42;
+}
+
+.inp-group input::placeholder {
+    color: #b6b6b6;
+}
+
+.inp-group {
+    position: relative;
+}
+
+.inp-group .icon {
+    position: absolute;
+    left: 17px;
+    top: 15px;
+    color: #787878;
+    font-size: 1.3em;
+}
+
+
+
+.slider {
+    max-width: 650px;
+    margin: -280px auto 100px;
+}
+
+.slider .slides {
+    overflow: hidden;
+}
+
+.slider .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin: 22px 0;
+}
+
+.slider .slick-dots li button {
+    margin: 0 3px;
+    color: transparent;
+    background: #fff;
+    height: 16px;
+    width: 16px;
+    padding: 0;
+    border: 2px solid #dedfe0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.slider .slick-dots li.slick-active button {
+    border-color: #1ca8dd;
+}
+
+
+
+.services .cards {
+    margin-top: 80px;
+}
+
+.services .subheader { 
+    color: #7e9095; 
+    text-align: center;
+}
+
+.services .cards .col-md-6 {
+    padding-right: 60px;
+}
+
+.services .card {
+    display: flex;
+    margin-bottom: 70px;
+}
+
+.services .card h4 {
+    text-transform: uppercase;
+    font-family: bold 16px 'Lato';
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.services .card p {
+    color: #6b6b6b;
+}
+
+.services .card .card-icon {
+    flex: 0 0 80px;
+}
+
+
+
+
+.about {
+    margin-top: 100px;
+    background: #ffc155;
+    color: #fff;
+}
+
+.about h1 {
+    margin-top: 160px;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.about .text {
+    padding: 0 80px !important;
+}
+
+.about .btn {
+    margin-top: 35px;
+}
+
+.about .col-md-6 {
+    padding: 0;
+}
+
+
+
+.choose-price {
+    background: #e7edf3;
+    color: #394b50;
+    padding-bottom: 160px;
+}
+
+.choose-price .col-md-4 {
+    padding: 0;
+}
+
+.choose-price h1 {
+    margin-top: 140px;
+}
+
+.choose-price p {
+    margin-bottom: 90px;
+    text-align: center;
+    color: #7e9095;
+}
+
+.plan-card {
+    margin: 0;
+    text-align: center; 
+    border: 1px solid #ccd5df;
+    background: #fff;
+    padding: 53px 30px 47px;
+    color: #818b95
+}
+
+.plan-card.primary {
+    background: #709dca;
+    color: #fff;
+    padding: 88px 30px 85px;
+    margin-top: -35px;
+}
+
+.plan-card .plan-name {
+    font: 300 25px 'Lato';
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.plan-card .plan-price {
+    font: bold 60px 'Lato';
+    color: #ffbb42;
+    margin-left: -20px;
+}
+
+.plan-card .plan-price .up {
+    font-size: 35px;
+    position: relative;
+    top: -20px;
+    left: 10px;
+}
+
+.plan-card.primary .plan-price {
+    color: #fff;
+}
+
+.plan-card .plan-due {
+    font: 300 16px 'Lato';
+    text-transform: uppercase;
+    margin-bottom: 33px;
+}
+
+.plan-card .options li {
+    list-style: none;
+    font-size: 16px;
+    padding: 15px 0;
+    text-transform: uppercase;
+    border-top: 1px solid #ccd5df;
+    text-align: center;
+}
+
+.plan-card .btn {
+    margin-top: 25px;
+    font-size: 15px;
+}
+
+
+
+.how {
+    color: #394b50;
+}
+
+.how h1 {
+    margin-top: 140px;
+}
+
+.how h5 {
+    margin-bottom: 100px;
+}
+
+.how-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.how-card .img-container {
+    margin-bottom: 90px;
+}
+
+.how-card p {
+    padding: 0 15px;
+    text-align: center;
+    color: #7b7b7b;
+    line-height: 1.8;
+}
+
+.how-card h3 {
+    font: bold 20px 'Lato';
+    margin-bottom: 25px;
+}
+
+.how-card .arrows {
+    position: absolute;
+    top: -30px;
+    left: calc(100% - 44px);
+}
+
+.how-card .arrows.reverse {
+    transform: scaleY(-1);
+    top: 60px;
+}
+
+.how .btn-container {
+    padding: 85px 0 145px;
+    text-align: center;
+}
+
+
+
+.happy-clients {
+    color: #fff;
+    background: #ffc155;
+    padding: 140px 0;
+}
+
+.happy-clients .subheader {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.happy-clients .client-card {
+    padding: 40px 30px 50px;
+    margin-bottom: 20px;
+    color: #7b7b7b;
+    display: flex;
+    background: #fff;
+}
+
+.happy-clients .client-card .img-container {
+    flex: 0 0 150px;
+}
+
+.happy-clients .client-card img {
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+}
+
+.happy-clients .client-card p {
+    line-height: 1.7;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.happy-clients .quotemarks {
+    position: absolute;
+    font-size: 15px;
+}
+
+.happy-clients .quotemarks.fa-quote-left {
+    top: -6px;
+    left: -25px;
+}
+
+.happy-clients .quotemarks.fa-quote-right {
+    bottom: -16px;
+    right: -5px;
+}
+
+.happy-clients .client-name {
+    color: #f6772c;
+    font: 14px Lato;
+    text-transform: uppercase;
+}
+
+.happy-clients .client-position {
+    color: #99a9ae;
+}
+
+.newsletter {
+    margin-top: 130px;
+    color: #394b50;
+}
+
+.newsletter .subheader {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.newsletter .subscribe-form {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.newsletter .subscribe-form input {
+    border: 1px solid #cbcbcb;
+    margin: 0 5px;
+}
+
+.newsletter .subscribe-form .btn {
+    margin: 0 5px;
+}
+
+.newsletter .map {
+    margin-top: 45px;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.newsletter .map .mark {
+    position: absolute;
+    left: calc(45% - 15px);
+    top: calc(60% - 15px);
+}
+
+.newsletter .map .marker {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    bottom: 80px;
+    left: -115px;
+    border-radius: 140px;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background: #394b50;
+    color: #aeb7ba;
+}
+
+.newsletter .map .marker:after {
+    content: '';
+    position: absolute;
+    top: calc(100% - 3px);
+    width: 0;
+    height: 0;
+    display: block;
+    border: 20px solid transparent;
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-top-color: #394b50;
+}
+
+.newsletter .map .marker a {
+    color: #ffbb42;
+}
+
+.newsletter .map .marker h3 {
+    font: bold 15px Lato;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+
+.footer .links {
+    padding-top: 65px;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #c9d7db;
+}
+
+.footer .links li {
+    font: 13px Lato;
+    text-transform: uppercase;
+    display: inline-block;
+    list-style: none;
+    margin: 0 22px;
+}
+
+.footer .links li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer .phone {
+    text-align: center;
+    font: 22.5px Lato;
+    margin-bottom: 20px;
+}
+
+.footer .soc-icons {
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 50px;
+}
+
+.footer .soc-icons i {
+    color: #709dca;
+    margin: 0 6px;
+}
+
+.footer .soc-icons i:hover {
+    color: #ffbb42;
+}
+
+
+.footer .copyleft {
+    width: 100%;
+    background: #709dca;
+    color: #fff;
+    padding: 17px 0;
+    text-align: center;
+}

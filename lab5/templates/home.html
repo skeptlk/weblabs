@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log analyzer :)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+    <script src="/js/script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <form id="upload" class="card mt-2 mb-2">
+                    <div class="card-body">
+                        <label for="path" class="form-label">Path to log file:</label>
+                        <input class="form-control" type="text" id="path" name="path" value="./data.log" required>
+                    </div>
+                    <div class="card-footer text-end">
+                        <div class="spinner-border hidden"></div>
+                        <button class="btn btn-primary">Upload</button>
+                    </div>
+
+                    <div class="progress hidden">
+                        <div class="progress-bar"></div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-lg-6">
+                <form id="gen_report" class="card mt-2 mb-2">
+                    <div class="card-body">
+                        <label for="groupby" class="form-label">Group by:</label>
+                        <select class="form-select" name="groupby" id="groupby">
+                            <option value="day">Days</option>
+                            <option value="week">Weeks</option>
+                            <option value="month">Months</option>
+                        </select>
+                        <label for="sess" class="form-label">Session duration (in minutes):</label>
+                        <input type="text" name="session_minutes" id="sess" class="form-control" value="20">
+                    </div>
+                    <div class="card-footer text-end">
+                        <button class="btn btn-primary">Generate a report</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body" id="plot" style="height: 300px;">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div id="table">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/js/flot/jquery.canvaswrapper.js"></script>
+	<script type="text/javascript" src="/js/flot/jquery.colorhelpers.js"></script>
+	<script type="text/javascript" src="/js/flot/jquery.flot.js"></script>
+	<script type="text/javascript" src="/js/flot/jquery.flot.saturated.js"></script>
+	<script type="text/javascript" src="/js/flot/jquery.flot.browser.js"></script>
+	<script type="text/javascript" src="/js/flot/jquery.flot.drawSeries.js"></script>
+	<script type="text/javascript" src="/js/flot/jquery.flot.uiConstants.js"></script> 
+</body>
+</html>

@@ -1,0 +1,38 @@
+
+header, .hero, .newsletter, footer, .slider {
+    display: none;
+}
+
+.happy-clients h1, .happy-clients .subheader{
+    color: #000;
+}
+
+.happy-clients .col-6 {
+    flex: none;
+    max-width: 100%;
+}
+
+.happy-clients {
+    background:transparent;
+}
+
+button {
+    display: none;
+}
+
+
+.about .img {
+    display: none;
+}
+
+.about {
+    background: transparent;
+}
+
+.about .text {
+    color: #000;
+}
+
+.choose-price {
+    background: transparent;
+}
