@@ -1,0 +1,34 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Account settings:</h1>
+
+            <p>
+                This is your account settings:
+            </p>
+            <form method="POST" action="/api_edit_profile" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{user_id}">
+                <div class="form-group">
+                    <label>First name</label>
+                    <input type="text" name="first_name" value="{first_name}" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Last name</label>
+                    <input type="text" name="last_name" value="{last_name}" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" name="email" value="{email}" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="photo">Profile picture</label>
+                    <input type="file" name="photo" id="photo" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary float-right mt-3">Save profile</button>
+                <a href="/api_logout" class="btn btn-secondary float-right mt-3 mr-2">Log out</a>
+            </form>
+            
+        </div>
+    </div>
+</div>
