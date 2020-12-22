@@ -17,13 +17,13 @@ function upload(e) {
         processData: false,
         contentType: false,
         success: () => { 
-            hideProgressBar(); 
+            hideLoadingUI(); 
             clearTimeout(timeout); 
             alert('Successfully uploaded!');
         }
     });
 
-    showProgressBar();
+    showLoadingUI();
     timeout = setTimeout(updateStatus, 300);
 }
 
@@ -33,10 +33,18 @@ function updateStatus() {
         setProgressBarVal(percent);
         if (percent > 99.9) {
             clearTimeout(timeout);
-            hideProgressBar();
+            hideLoadingUI();
         }
     });
     timeout = setTimeout(updateStatus, 300);
+}
+
+function cancelUpload() {
+    clearTimeout(timeout);
+    hideLoadingUI();
+    $.get("/cancel", {}, () => {
+        alert("Uploading canceled.");
+    });
 }
 
 function getReport () {
@@ -46,6 +54,7 @@ function getReport () {
 
 function showReport (data) {
     const groupby = $('#groupby').val();
+    // YEP I KNOW I SHOULD DO IT BETTER
     let report = '<h3>Report:</h3>';
     report += '<table class="table">';
     report += '<thead>';
@@ -89,12 +98,16 @@ function setProgressBarVal(percent) {
     $('.progress-bar').css("width", percent + "%");
 }
 
-function showProgressBar() {
-    $('.spinner-border').show();
+function showLoadingUI() {
+    $('.upload-btn .spinner-border').show();
+    $('.upload-btn').addClass('disabled');
+    $('.stop-btn').show();
     $('.progress').show();
 }
 
-function hideProgressBar() {
-    $('.spinner-border').hide();
+function hideLoadingUI() {
+    $('.upload-btn .spinner-border').hide();
+    $('.upload-btn').removeClass('disabled');
+    $('.stop-btn').hide();
     $('.progress').hide();
 }

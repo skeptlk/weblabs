@@ -24,9 +24,14 @@ elseif (strpos($req, 'report') !== false && $met == 'GET') {
     report_handler($mysqli);
 
 }
+elseif (strpos($req, 'cancel') !== false && $met == 'GET') {
+
+    cancel_hadler($mysqli);
+
+}
 else {
-    
-    home_handler($mysqli);
+
+    echo file_get_contents("templates/home.html");
 
 }
 

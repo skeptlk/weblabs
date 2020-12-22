@@ -1,17 +1,27 @@
 <?php
 
 function upload_file_handler($mysqli) {
+    // session_start();
+    // session_regenerate_id();
 
-    $file = file_get_contents($_POST['path']);
-    $filesize = filesize($_POST['path']);
+    // OPEN FILE
+    $fname = $_POST['path'];
+    if (!file_exists($fname)) {
+        http_response_code(403); return;
+    }
+    $handler = @fopen($fname, "r");
+    if (!$handler) {
+        http_response_code(500); return;
+    }
+
+    $filesize = filesize($fname);
     $processed = 0; 
-    set_status($mysqli, $processed, $filesize);
-
-    $logs = explode(PHP_EOL, $file);
+    set_status($processed, $filesize);
 
     $batch = [];
 
-    foreach ($logs as $line) {
+    while (!feof($handler)) {
+        $line = fgets($handler, 4096);
         try {
             $matches = [];
             $c = preg_match_all(CLF_REGEX, $line, $matches);
@@ -31,18 +41,21 @@ function upload_file_handler($mysqli) {
             }
 
             $processed += strlen($line);
+            set_status($processed, $filesize);
 
             if (count($batch) > DB_BATCH_SIZE) {
                 insert_batch($batch, $mysqli);
                 $batch = [];
-                set_status($mysqli, $processed, $filesize);
             }
-
+            if ($_SESSION["should_stop"] === "true") {
+                http_response_code(418); return;
+            }
+                
         } catch (Exception $e) { }
     }
 
+    fclose($handler);
     insert_batch($batch, $mysqli);
-
     echo ("Gotovo!");
 }
 
@@ -68,20 +81,13 @@ function report_handler($mysqli) {
 }
 
 function status_handler($mysqli) {
-    $res = $mysqli->query(Q_GET_STATUS);
-
-    if ($res) {
-        $row = $res->fetch_assoc();
-        echo $row['status'];
-    } else {
-        http_response_code(500);
-        echo "Internal server error";
-    }
+    session_start();
+    echo $_SESSION["status"];
 }
 
-
-function home_handler($mysqli) {
-    echo file_get_contents("templates/home.html");
+function cancel_hadler($_) {
+    session_start();
+    $_SESSION["should_stop"] = "true";
+    session_write_close();
 }
-
 

@@ -25,8 +25,11 @@ function get_report_query($groupby, $session_minutes)
     return $report;
 }
 
-function set_status($mysqli, $ready, $size) {
+function set_status($ready, $size) {
     $status = 100 * ($ready / $size);
-    $q = "UPDATE log_status SET status='$status' WHERE id=1";
-    $mysqli->query($q);
+
+    session_start();
+    $_SESSION["status"] = $status;
+    session_write_close();
+
 }
