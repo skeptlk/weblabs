@@ -11,6 +11,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { SliderModule } from 'primeng/slider';
 import { CheckboxModule } from 'primeng/checkbox';
+import { AircraftCardComponent } from './aircraft-card/aircraft-card.component';
+import { BillionDollarPipe } from './pipes/billion-dollar.pipe';
 
 const config = {
     apiKey: "AIzaSyDFeh14LEhUzZtXpmLmylvZCf1050SzSZ0",
@@ -25,7 +27,9 @@ const config = {
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        AircraftCardComponent,
+        BillionDollarPipe,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     imports: [

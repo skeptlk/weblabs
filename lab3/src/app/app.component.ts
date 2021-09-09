@@ -162,7 +162,4 @@ export class AppComponent {
             if (item["isSelected"]) return false;
         return true;
     }
-
-    // maxCostQuery = this.aircraftCollection.ref.orderBy("cost", "desc").limit(1);
-    // minCostQuery = this.aircraftCollection.ref.orderBy("cost", "asc" ).limit(1);
 }

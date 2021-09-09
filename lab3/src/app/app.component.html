@@ -5,8 +5,8 @@
             <div class="form-group">
                 <h4>Стоимость:</h4>
                 <div class="rangeLabels">
-                    <span class="from">{{ getCostLabel(filters.cost[0]) }}</span>
-                    <span class="to">{{ getCostLabel(filters.cost[1]) }}</span>
+                    <span class="from">{{ filters.cost[0] | toBillion }}</span>
+                    <span class="to">{{ filters.cost[1] | toBillion }}</span>
                 </div>
                 <p-slider [(ngModel)]="filters.cost" 
                     [range]="true" 
@@ -93,20 +93,7 @@
                 </ng-container>
                 <div class="p-grid" *ngIf="filteredAircrafts.length > 0">
                     <div *ngFor="let aircraft of filteredAircrafts" class="p-col-6 p-md-6 p-lg-3">
-                        <p-card [header]="aircraft.name" 
-                            [subheader]="aircraft.type" 
-                            styleClass="p-card-shadow">
-                            <p-header>
-                                <img [src]="aircraft.image">
-                            </p-header>
-                            <ul>
-                                <li>Статус - {{ aircraft.status }}</li>
-                                <li>Производитель - {{ aircraft.manufacturer }}</li>
-                                <li>Двигатель - {{ aircraft.engine }}</li>
-                                <li>Первый полёт - {{ aircraft.firstFlight }}</li>
-                                <li>Цена - {{ getCostLabel(aircraft.cost) }}</li>
-                            </ul>
-                        </p-card>
+                        <aircraft-card [data]="aircraft"></aircraft-card>
                     </div>
                 </div>
             </div>

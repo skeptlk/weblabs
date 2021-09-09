@@ -1,0 +1,13 @@
+
+<p-card [header]="data.name" [subheader]="data.type" styleClass="p-card-shadow">
+    <p-header>
+        <img [src]="data.image">
+    </p-header>
+    <ul>
+        <li>Статус - {{ data.status }}</li>
+        <li>Производитель - {{ data.manufacturer }}</li>
+        <li>Двигатель - {{ data.engine }}</li>
+        <li>Первый полёт - {{ data.firstFlight }}</li>
+        <li>Цена - {{ data.cost | toBillion }}</li>
+    </ul>
+</p-card>
