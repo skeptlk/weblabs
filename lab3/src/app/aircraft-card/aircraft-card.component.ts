@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Aircraft } from '../app.component';
 
 @Component({
@@ -6,15 +6,16 @@ import { Aircraft } from '../app.component';
   templateUrl: './aircraft-card.component.html',
   styleUrls: ['./aircraft-card.component.scss']
 })
-export class AircraftCardComponent implements OnInit {
+export class AircraftCardComponent {
 
   @Input() data: Aircraft;
+  @Output() onHeaderClick: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 
-
-
-  ngOnInit(): void {
+  test() {
+    console.log(123);
+    
   }
 
 }

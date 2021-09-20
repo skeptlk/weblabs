@@ -38,7 +38,7 @@
                     [(ngModel)]="item.value.isSelected" 
                     [disabled]="item.value.isDisabled"
                     [label]="item.value.name"
-                    [ngStyle]="{display: 'block'}"
+                    class="block-checkbox"
                     binary="true">
                 </p-checkbox>
             </div>
@@ -51,7 +51,7 @@
                     [(ngModel)]="item.value.isSelected" 
                     [disabled]="item.value.isDisabled"
                     [label]="item.value.name"
-                    [ngStyle]="{display: 'block'}"
+                    class="block-checkbox"
                     binary="true">
                 </p-checkbox>
             </div>
@@ -64,6 +64,7 @@
                     [(ngModel)]="item.value.isSelected" 
                     [disabled]="item.value.isDisabled"
                     [label]="item.value.name"
+                    [ngStyle]="{marginRight: '10px'}"
                     binary="true">
                 </p-checkbox>
             </div>
@@ -76,6 +77,7 @@
                     [(ngModel)]="item.value.isSelected" 
                     [disabled]="item.value.isDisabled"
                     [label]="item.value.name"
+                    class="block-checkbox"
                     binary="true">
                 </p-checkbox>
             </div>
@@ -91,9 +93,9 @@
                 <ng-container *ngIf="filteredAircrafts.length === 0 && !isLoading">
                     <h3>По данному запросу ничего не найдено</h3>
                 </ng-container>
-                <div class="p-grid" *ngIf="filteredAircrafts.length > 0">
-                    <div *ngFor="let aircraft of filteredAircrafts" class="p-col-6 p-md-6 p-lg-3">
-                        <aircraft-card [data]="aircraft"></aircraft-card>
+                <div class="grid" *ngIf="filteredAircrafts.length > 0">
+                    <div *ngFor="let aircraft of filteredAircrafts" class="col-6 col-md-6 col-lg-3">
+                        <aircraft-card [data]="aircraft" (onHeaderClick)="fullscreen = aircraft"></aircraft-card>
                     </div>
                 </div>
             </div>
@@ -102,3 +104,9 @@
 
     </div>
 </div>
+
+<fullscreen-img *ngIf="fullscreen"
+    [src]="fullscreen.image"
+    [alt]="fullscreen.name"
+    (onClose)="fullscreen = null;">
+</fullscreen-img>

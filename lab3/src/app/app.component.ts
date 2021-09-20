@@ -30,6 +30,7 @@ export class AppComponent {
     isLoading: boolean;
     aircrafts: Aircraft[] = [];
     filteredAircrafts: Aircraft[] = [];
+    fullscreen: Aircraft;
 
     filters: any = {
         manufacturer: {},
@@ -150,11 +151,6 @@ export class AppComponent {
         for (let item of items) {
             values[item[filter]].isDisabled = false;
         }
-    }
-
-    getCostLabel(cost: number) {
-        return cost <= 0 ?
-            "0$" : (cost / 1000000).toFixed(0) + " млн $";
     }
 
     isFilterEmpty(filter: string) {

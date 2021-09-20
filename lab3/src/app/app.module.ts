@@ -13,6 +13,7 @@ import { SliderModule } from 'primeng/slider';
 import { CheckboxModule } from 'primeng/checkbox';
 import { AircraftCardComponent } from './aircraft-card/aircraft-card.component';
 import { BillionDollarPipe } from './pipes/billion-dollar.pipe';
+import { FullscreenImgComponent } from './fullscreen-img/fullscreen-img.component';
 
 const config = {
     apiKey: "AIzaSyDFeh14LEhUzZtXpmLmylvZCf1050SzSZ0",
@@ -30,6 +31,7 @@ const config = {
         AppComponent,
         AircraftCardComponent,
         BillionDollarPipe,
+        FullscreenImgComponent,
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     imports: [

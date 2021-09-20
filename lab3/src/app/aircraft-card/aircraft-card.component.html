@@ -1,6 +1,6 @@
 
 <p-card [header]="data.name" [subheader]="data.type" styleClass="p-card-shadow">
-    <p-header>
+    <p-header (click)="onHeaderClick.emit()">
         <img [src]="data.image">
     </p-header>
     <ul>

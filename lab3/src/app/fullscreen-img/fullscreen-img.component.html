@@ -1,0 +1,8 @@
+<div 
+    class="overlay" 
+    (click)="onClose.emit()"
+    (wheel)="zoom($event)"
+>
+    <img [src]="src" [alt]="alt"
+        [ngStyle]='{transform: "scale(" + zoomValue + ")"}'>
+</div>
