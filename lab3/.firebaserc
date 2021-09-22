@@ -7,5 +7,8 @@
         ]
       }
     }
+  },
+  "projects": {
+    "default": "smart-filter-272"
   }
 }
